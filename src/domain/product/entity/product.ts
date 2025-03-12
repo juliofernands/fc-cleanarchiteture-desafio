@@ -43,4 +43,13 @@ export default class Product extends Entity implements ProductInterface {
   validate() {
     ProductValidatorFactory.create().validate(this);
   }
+
+  toJSON() {
+		return {
+			id: this._id,
+			name: this._name,
+			price: this._price,
+		};
+  }
+    
 }
